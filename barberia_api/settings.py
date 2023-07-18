@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'bloc'
     
 ]
 
@@ -67,7 +68,7 @@ def custom_jwt_response_handler(token, user=None, request=None):
         'token': str(token),
         'user_id': user.id,
         'email': user.email,
-        'role': user.role,  # Aquí incluimos el rol del usuario en el JWT
+        'role': user.role, 
     }
 
 SIMPLE_JWT = {

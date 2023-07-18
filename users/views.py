@@ -56,7 +56,7 @@ class UserSearchView(generics.ListAPIView):
     def get_queryset(self):
         first_name = self.request.query_params.get('first_name', None)
         if first_name is not None:
-            # Utilizar Q para realizar una búsqueda insensible a mayúsculas y minúsculas
+            #Q espara realizar una búsqueda insensible a mayúsculas y minúsculas
             queryset = CustomUser.objects.filter(Q(first_name__icontains=first_name))
         else:
             queryset = CustomUser.objects.all()
