@@ -11,3 +11,8 @@ class UserSerializer(serializers.ModelSerializer):
             'password': {'write_only': True},
             'id': {'read_only': True},
         }
+        
+class UserEmailUsernameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ['username','email']        

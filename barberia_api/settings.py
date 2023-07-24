@@ -19,7 +19,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
-    'bloc'
+    'bloc',
+    'authentication'
     
 ]
 
@@ -64,7 +65,6 @@ REST_FRAMEWORK = {
     ],
 }
 
-
 def custom_jwt_response_handler(token, user=None, request=None):
     return {
         'token': str(token),
@@ -75,7 +75,7 @@ def custom_jwt_response_handler(token, user=None, request=None):
     }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_RESPONSE_HANDLER': custom_jwt_response_handler,
+    'ACCESS_TOKEN_RESPONSE_HANDLER': 'tu_app.views.custom_jwt_response_handler',
 }
 
 DATABASES = {
