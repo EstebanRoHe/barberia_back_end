@@ -77,15 +77,15 @@ def custom_jwt_response_handler(token, user=None, request=None):
 SIMPLE_JWT = {
     'ACCESS_TOKEN_RESPONSE_HANDLER': 'tu_app.views.custom_jwt_response_handler',
 }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'barberia',
+        'NAME': 'railway',
+        'HOST': 'containers-us-west-63.railway.app',
+        'PORT': '6681',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost', 
-        'PORT': '3306',      
+        'PASSWORD': '48FuTrD1276VqcryP6AU',
+   
     }
 }
 
