@@ -1,10 +1,16 @@
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-aw=17*dur1)u%=*pf9l#=373mg2cj^gp!+j^lr13luxjjp7wzy'
 
-DEBUG = True
+DEBUG = DEBUG = 'RENDER' not in os.environ
 ALLOWED_HOSTS = []
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:    
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 AUTH_USER_MODEL = 'users.CustomUser'
 
 INSTALLED_APPS = [
